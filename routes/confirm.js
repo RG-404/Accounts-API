@@ -9,6 +9,7 @@ router.get("/", (req, res) => res.send("CONFIRM WORKING"));
 
 router.post("/", (req, res) => {
   const { token } = req.body;
+  console.log("POST /confirm: ",req.body)
   let errors = [];
 
   if (!token) {

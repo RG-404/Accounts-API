@@ -12,7 +12,7 @@ router.get("/", authenticateToken, (req, res) => {
          res.sendStatus(403)
      } else {
          res.json({
-             message: 'WELCOME',
+             message: 'REACHED SECURED ROUTE. FOR TESTING ONLY',
              authData
          })
      }

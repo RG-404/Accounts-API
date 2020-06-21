@@ -14,6 +14,8 @@ router.get("/", (req, res) => res.send("google auth"));
 
 router.post("/", (req, res) => {
   const { googleID, email, name } = req.body;
+  console.log("POST /googleauth: ",req.body)
+  
   let errors = [];
   if (!googleID || !email || !name) {
     errors.push({ message: "INCOMPLETE" });

@@ -9,8 +9,8 @@ require("dotenv").config();
 router.get("/", (req, res) => res.send("UPDATE"));
 
 router.post("/", authenticateToken, (req, res) => {
-  console.log(req.body);
   const { data } = req.body;
+  console.log(req.body);
   let status = [];
   jwt.verify(req.token, process.env.ACCESS_TOKEN_SECRET, (err, authData) => {
     if (err) {
@@ -54,7 +54,7 @@ router.post("/", authenticateToken, (req, res) => {
             console.log(err);
           });
           res.json({
-            authData,
+            token: authData,
             status,
           });
         })

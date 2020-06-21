@@ -24,6 +24,7 @@ router.get("/", (req, res) => res.send("forgot"));
 //Reset Request Handler
 router.post("/", (req, res) => {
   const { email } = req.body;
+  console.log("POST /forgot: ",req.body)
   let errors = [];
 
   //Check required fields
@@ -134,7 +135,7 @@ async function sendVerificationEmail(email, newVerifyForgotPass) {
     from: `AURIN <${emailUser}>`,
     to: `Recipient <${email}>`,
     subject: "Password Reset ✔",
-    html: `<b>Click this link to resest password: </b><a href="http://localhost:3000/forgot/updatepassword/${newVerifyForgotPass}">LINK</a>`, // html body
+    html: `<b>Click this link to resest password: </b><a href="http://172.20.10.3:3000/forgot/updatepassword/${newVerifyForgotPass}">LINK</a>`, // html body
   };
 
   transporter.sendMail(message, (err, info) => {

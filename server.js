@@ -72,7 +72,11 @@ const userRouter = require('./routes/user');
 app.use('/user', userRouter);
 
 app.get("/", (req, res)=>{
-    res.send("Working")
+    // res.send("Working")
+    // res.redirect('https://google.com');
+    res.send(
+        `<img src="https://i.pinimg.com/474x/33/23/94/33239488ede380d4f02386460ed3adf3.jpg">`
+    )
 })
 
 app.listen(port, () => {
